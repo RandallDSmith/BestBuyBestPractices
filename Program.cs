@@ -26,3 +26,14 @@ foreach (var department in departments)
     Console.WriteLine();
     Console.WriteLine();    
 }
+
+var productRepo = new DapperProductRepository(conn);
+
+productRepo.CreateProduct("JoyStick", 20, 1);
+
+var products = productRepo.GetAllProducts();
+
+foreach (var product in products)
+{
+    Console.WriteLine($"{product.ProductID} {product.Name} {product.ProductID}");
+}
